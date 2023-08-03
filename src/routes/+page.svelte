@@ -285,6 +285,8 @@ input[type="submit"]:active
     cursor: pointer;
     padding: 10px;
     border-radius: 4px;
+    border: none;
+  outline: none;
 }
 @media (max-width: 900px)
 {
