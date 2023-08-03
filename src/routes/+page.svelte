@@ -1,8 +1,11 @@
 <script>
 	import Modal from '$lib/Modal.svelte';
-    import Login from '$lib/Login.svelte';
+    import Login from '$lib/login/Login.svelte';
+    import Play from '$lib/play/Play.svelte';
 
 	let showModal = true;
+    let loggedIn = false;
+
 </script>
 
 <Modal bind:showModal>
@@ -70,7 +73,11 @@
     <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
     <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
     
-    <Login bind:showModal />
+    {#if loggedIn }
+    <Play bind:showModal/>
+    {:else}
+    <Login bind:loggedIn bind:showModal />
+    {/if}
   </section> <!-- partial --> 
  </body>
 

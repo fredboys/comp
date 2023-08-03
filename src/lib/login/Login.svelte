@@ -1,11 +1,11 @@
 <script>
     export let showModal
+    export let loggedIn
 
-    let loggedIn = false
 
-    function handleClick(){
-        loggedIn = true
-    }
+    function toggle() {
+		loggedIn = !loggedIn;
+	}
 </script>
 
 <div class="signin"> 
@@ -13,9 +13,9 @@
      <h2>LOGIN & PLAY</h2> 
      <div class="form">
         <p>Login with your prefered method</p>
-        <button on:click={{handleClick}} class="btn">Google</button>
-        <button on:click={{handleClick}} class="btn">Facebook</button>
-        <button on:click={{handleClick}} class="btn">Microsoft</button>
+        <button on:click={toggle} class="btn">Google</button>
+        <button on:click={toggle} class="btn">Facebook</button>
+        <button on:click={toggle} class="btn">Microsoft</button>
       <button on:click={() => (showModal = true)} class="btn rules"> Rules </button>
      </div> 
     </div> 
@@ -86,10 +86,15 @@ p {
     padding: 10px;
     border-radius: 4px;
     border: none;
-    outline: none;
-    
+    outline: none;    
 }
 
+.btn:hover{
+  letter-spacing: 3px;
+  font-size: 1.5em;
+  background: #fff;
+  color: #000;
+}
 .rules {
     margin-top: 15px;
 }
