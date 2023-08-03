@@ -76,10 +76,19 @@
        <input type="text" required> <i>Username</i> 
       </div> 
       <div class="inputBox"> 
+        <input type="text" required> <i>First Name</i> 
+       </div>
+       <div class="inputBox"> 
+        <input type="text" required> <i>Last Name</i> 
+       </div>
+       <div class="inputBox"> 
+        <input type="email" required> <i>Email</i> 
+       </div>
+      <div class="inputBox"> 
        <input type="password" required> <i>Password</i> 
       </div>  
       <div class="inputBox"> 
-       <input type="submit" value="Pay with Stripe"> 
+       <input type="submit" value="Pay £1"> 
       </div> 
       <button on:click={() => (showModal = true)} class="btn"> Rules </button>
      </div> 
@@ -92,6 +101,13 @@
 
 
 <style>
+    @font-face {
+        font-family: 'Gelasio';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Gelasio Regular'), local('Gelasio-Regular'), url(https://fonts.gstatic.com/s/gelasio/v1/cIf9MaFfvUQxTTqS9C6hYQ.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
     .rules, .welcome {
         text-align: center;
     }
@@ -105,13 +121,15 @@
     .underline {
         text-decoration: underline;
     }
-    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+    h3 {
+        margin: 5px;
+    }
+   
 *
 {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Quicksand', sans-serif;
 }
 body 
 {
@@ -251,6 +269,7 @@ section .signin .content .form .inputBox i
   font-size: 1.35em;
   letter-spacing: 0.05em;
   cursor: pointer;
+  font-family: Gelasio
 }
 input[type="submit"]:active
 {
@@ -259,6 +278,7 @@ input[type="submit"]:active
 .btn {
     background: #0f0;
     color: #000;
+    font-family: Gelasio;
     font-weight: 600;
     font-size: 1.35em;
     letter-spacing: 0.05em;
